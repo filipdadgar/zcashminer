@@ -13,4 +13,4 @@ RUN cd /opt/nheqminer/cpu_xenoncat/Linux/asm/; sh assemble.sh
 RUN cd /opt/nheqminer/Linux_cmake/nheqminer_cpu; cmake .; make -j $(nproc)
 
 ENTRYPOINT ["/opt/nheqminer/Linux_cmake/nheqminer_cpu/nheqminer_cpu"]
-CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "1GQL26D7p6bxa1PL4QDCFh6wRetMxVcTM8.worker1"]
+CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "3F2cKdnoX4SriTb8SG7gTnoNw5Z6AGmnv5.worker1"]
