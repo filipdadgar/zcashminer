@@ -12,8 +12,5 @@ RUN cd /opt; git clone -b Linux https://github.com/nicehash/nheqminer.git
 RUN cd /opt/nheqminer/cpu_xenoncat/Linux/asm/; sh assemble.sh
 RUN cd /opt/nheqminer/Linux_cmake/nheqminer_cpu; cmake .; make -j $(nproc)
 
-ARG MYVAR
-ENV MYVAR=$MYVAR
-
 ENTRYPOINT ["/opt/nheqminer/Linux_cmake/nheqminer_cpu/nheqminer_cpu"]
-CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "3F2cKdnoX4SriTb8SG7gTnoNw5Z6AGmnv5.worker${MYVAR}"]
+CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "3F2cKdnoX4SriTb8SG7gTnoNw5Z6AGmnv5.worker"]
