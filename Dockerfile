@@ -16,4 +16,4 @@ ARG MYVAR
 ENV MYVAR=$MYVAR
 
 ENTRYPOINT ["/opt/nheqminer/Linux_cmake/nheqminer_cpu/nheqminer_cpu"]
-CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "3F2cKdnoX4SriTb8SG7gTnoNw5Z6AGmnv5.worker$MYVAR"]
+CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "3F2cKdnoX4SriTb8SG7gTnoNw5Z6AGmnv5.worker${MYVAR}"]
