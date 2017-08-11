@@ -12,7 +12,10 @@ RUN cd /opt; git clone -b Linux https://github.com/nicehash/nheqminer.git
 RUN cd /opt/nheqminer/cpu_xenoncat/Linux/asm/; sh assemble.sh
 RUN cd /opt/nheqminer/Linux_cmake/nheqminer_cpu; cmake .; make -j $(nproc)
 
-NUMB=$(( $RANDOM % 100 ))
+export MYVAR=$(( $RANDOM % 100 ))
+cat > build/env.sh <<EOF
+MYVAR=${MYVAR}
+EOF
 
 ENTRYPOINT ["/opt/nheqminer/Linux_cmake/nheqminer_cpu/nheqminer_cpu"]
-CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "3F2cKdnoX4SriTb8SG7gTnoNw5Z6AGmnv5.worker$NUMB"]
+CMD ["-l", "equihash.eu.nicehash.com:3357", "-u", "3F2cKdnoX4SriTb8SG7gTnoNw5Z6AGmnv5.worker$MYVAR"]
